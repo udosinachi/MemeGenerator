@@ -14,7 +14,32 @@ const Mybutton = styled.button`
   border: none;
   font-size: 17px;
   border-radius: 1.5em;
+  letter-spacing: 1.5px;
   `
+const Mainimg = styled.img`
+    position: relative;
+    margin: auto;
+    width: 50%;`
+
+const Myh2 = styled.h2`
+    position: relative;
+    width: 90%;
+    text-align: cen;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 1px;
+
+`
+
+const Maindiv = styled.div`
+    background: whitesmoke;
+    margin: 0;
+    `
 
 class Meme extends React.Component{
     constructor(){
@@ -52,7 +77,7 @@ class Meme extends React.Component{
 
     render(){
         return(
-            <div>
+            <Maindiv>
                 <form className='memeform' onSubmit={this.buttonChange}>
                     <Myinput 
                     type='text'
@@ -73,11 +98,11 @@ class Meme extends React.Component{
                     <Mybutton>Gen</Mybutton>
                 </form>
                 <div className='meme'>
-                    <img src={this.state.randomImg} alt='' />
-                    <h2 className='top'>{this.state.topText}</h2>
-                    <h2 className='bottom'>{this.state.bottomText}</h2>
+                    <Mainimg src={this.state.randomImg} alt='' />
+                    <Myh2 className='top'>{this.state.topText}</Myh2>
+                    <Myh2 className='bottom'>{this.state.bottomText}</Myh2>
                 </div>
-            </div>
+            </Maindiv>
         )
     }
 }
