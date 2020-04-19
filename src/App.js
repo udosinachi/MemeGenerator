@@ -2,14 +2,24 @@ import React from 'react'
 import Meme from './Meme'
 import Header from './Header'
 import styled from 'styled-components'
-import { BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import About from './Components/About'
+import Error from './Components/Error'
+import Nav from './Components/Nav'
 
 function App(){
     return(
-        <div>
-            <Header />
-            <Meme />
-        </div>
+        <BrowserRouter>
+            <Nav />
+            <Switch>
+                <Route path='/' component={About} exact />
+                <Route path='/meme/' component={Header} />
+                <Route component={Error} />
+             </Switch>
+             <Route path='/meme' component={Meme} />
+             
+        </BrowserRouter>
+    
     )
 }
 
